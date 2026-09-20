@@ -1,0 +1,80 @@
+
+/* src/styles/tokens.css */
+:root {
+  /* ───────── marca ───────── */
+  --c-beet:        #9E0059;   /* assinatura */
+  --c-beet-deep:   #6d003d;
+  --c-beet-glow:   #ff4fa3;
+  --c-beet-wash:   #ffe2f0;
+
+  /* acentos vibrantes — uso pontual, nunca em área grande */
+  --c-cyan:        #00e5ff;
+  --c-acid:        #e8ff00;
+
+  /* ───────── cinzas XP ───────── */
+  --c-face:        #dfdfdf;
+  --c-face-2:      #cdcdcd;
+  --c-shadow:      #404040;
+  --c-highlight:   #ffffff;
+  --c-mid:         #8d8d8d;
+
+  /* ───────── neutros de conteúdo ───────── */
+  --c-ink:         #141218;
+  --c-ink-soft:    #4d4856;
+  --c-paper:       #f1eff2;
+  --c-night:       #17131c;
+
+  /* ───────── bevel XP ─────────
+     escuro em cima/esquerda + claro embaixo/direita = INSET (pressionado)
+     o inverso = OUTSET (em relevo). box-shadow não altera o layout,
+     então o "clique" não empurra o conteúdo. */
+  --bevel-out: inset 2px 2px 0 0 var(--c-highlight),
+               inset -2px -2px 0 0 var(--c-shadow);
+  --bevel-in:  inset 2px 2px 0 0 var(--c-shadow),
+               inset -2px -2px 0 0 var(--c-highlight);
+  --bevel-out-lg: inset 3px 3px 0 0 var(--c-highlight),
+                  inset -3px -3px 0 0 var(--c-shadow);
+  --bevel-in-lg:  inset 3px 3px 0 0 var(--c-shadow),
+                  inset -3px -3px 0 0 var(--c-highlight);
+  --hairline: 1px solid var(--c-ink);
+
+  /* ───────── tipografia ───────── */
+  --f-display: 'Anton', 'Arial Narrow', 'Haettenschweiler', sans-serif;
+  --f-serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --f-ui:      Tahoma, Verdana, 'Segoe UI', system-ui, sans-serif;
+
+  --fs-hero:  clamp(3rem, 14vw, 9rem);
+  --fs-h1:    clamp(2.1rem, 6vw, 3.6rem);
+  --fs-h2:    clamp(1.5rem, 3.4vw, 2.2rem);
+  --fs-h3:    clamp(1.15rem, 2.2vw, 1.45rem);
+  --fs-body:  clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --fs-sm:    clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
+  --fs-xs:    0.72rem;
+
+  --lh-tight: 0.92;
+  --lh-body:  1.62;
+  --ls-wide:  0.14em;
+
+  /* ───────── espaçamento ───────── */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 96px;
+
+  /* ───────── layout ───────── */
+  --container: 1180px;
+  --container-read: 680px;
+  --header-h: 56px;
+  --touch: 44px;            /* área mínima de toque */
+  --radius: 0px;            /* Y2K é quadrado */
+
+  /* ───────── movimento ───────── */
+  --t-fast: 150ms;
+  --t-base: 200ms;
+  --t-slow: 250ms;
+  --ease: cubic-bezier(.2,.7,.3,1);
+
+  /* ───────── camadas ───────── */
+  --z-nav: 100; --z-menu: 110; --z-top: 200;
+
+  /* ───────── cursor customizado ───────── */
+  --cursor-hit: url("data:image/svg+xml;utf8,<svg xmlns='[w3.org](http://www.w3.org/2000/svg)' width='22' height='22'><path d='M3 1.5 L3 17 L7.2 13.2 L9.8 19 L12.9 17.6 L10.3 12 L16.5 12 Z' fill='%239E0059' stroke='%23ffffff' stroke-width='1.4' stroke-linejoin='round'/></svg>") 3 1, pointer;
+}
