@@ -283,3 +283,23 @@
 .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-5); }
 .section-head h2 { font: 400 var(--fs-h2)/1 var(--f-display); text-transform: uppercase; margin: 0; }
 .empty { padding: var(--sp-7) var(--sp-4); text-align: center; color: var(--c-ink-soft); box-shadow: var(--bevel-in); background: var(--c-face); }
+
+.brand__frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: var(--sp-1) var(--sp-2);
+  background: var(--c-face);
+  box-shadow: var(--bevel-out);
+}
+.brand__frame img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+
+
+
+

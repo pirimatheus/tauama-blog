@@ -45,9 +45,8 @@ a:hover { color: var(--c-beet-deep); }
 
 /* cursor só em ponteiro fino — não afeta touch nem performance de scroll */
 @media (pointer: fine) {
-  a, button, [role="button"], summary, label[for] { cursor: var(--cursor-hit); }
+  a, button, [role="button"], summary, label[for] { cursor: pointer; }
 }
-
 /* barra de rolagem estilo sistema antigo */
 @supports selector(::-webkit-scrollbar) {
   ::-webkit-scrollbar { width: 14px; height: 14px; }

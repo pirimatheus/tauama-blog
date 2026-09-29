@@ -17,7 +17,7 @@ export default function Home() {
       <section className="container hero">
         <div className="hero__grid">
           <div>
-            <p className="eyebrow">Blog pessoal · design de moda · desde 2019</p>
+            <p className="eyebrow">Blog pessoal · design de moda · desde 2013</p>
             <h1 className="hero__title glitch" data-text="TAUAMA" tabIndex={0}>Tauama</h1>
             <p className="hero__sub">
               Liberdade de expressão vestida: hibridismo de estilos, customização

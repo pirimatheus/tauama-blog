@@ -8,9 +8,9 @@ import Button from '../components/Button.jsx'
 const EMAIL = 'contato@tauama.com.br'
 
 const SOCIAL = [
-  { label: 'Instagram', handle: '@tauama', href: '[instagram.com](https://instagram.com/tauama)' },
-  { label: 'Pinterest', handle: '/tauama', href: '[pinterest.com](https://pinterest.com/tauama)' },
-  { label: 'Behance',   handle: '/tauama', href: '[behance.net](https://behance.net/tauama)' }
+  { label: 'Instagram', handle: '@tauama', href: 'https://instagram.com/tauama' },
+  { label: 'Pinterest', handle: '/tauama', href: 'https://pinterest.com/tauama' },
+  { label: 'Behance',   handle: '/tauama', href: 'https://behance.net/tauama' }
 ]
 
 interface Errors { nome?: string; email?: string; mensagem?: string }

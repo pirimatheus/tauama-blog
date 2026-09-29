@@ -34,8 +34,9 @@ export default function Header() {
     <header className="header">
       <div className="header__inner">
         <Link className="brand" to="/">
-          <span className="brand__mark" aria-hidden="true"><Mushroom size={16} color="#fff" /></span>
-          Tauama
+          <span className="brand__frame">
+            <img src="/images/logo.webp" alt="Tauama" />
+          </span>
         </Link>
 
         <button

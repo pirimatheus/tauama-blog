@@ -1,4 +1,3 @@
-
 // src/pages/Post.tsx
 import { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
@@ -65,13 +64,13 @@ export default function Post() {
         </p>
       </header>
 
-
-      src={post.cover.src}
-      avif={post.cover.avif}
-      alt={post.cover.alt}
-      label={`${post.slug}.jpg`}
-      ratio="16 / 9"
-      priority
+      <Frame
+        src={post.cover.src}
+        avif={post.cover.avif}
+        alt={post.cover.alt}
+        label={`${post.slug}.jpg`}
+        ratio="16 / 9"
+        priority
       />
 
       <div className="prose reading" style={{ marginTop: 'var(--sp-6)' }}>
@@ -80,7 +79,7 @@ export default function Post() {
 
       <div className="reading" style={{ marginTop: 'var(--sp-6)' }}>
         <Button
-          href={`[wa.me](https://wa.me/?text=${encodeURIComponent()`${post.title} — ${window.location.href}`}
+          href={`https://wa.me/?text=${encodeURIComponent(`${post.title} — ${window.location.href}`)}`}
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -90,6 +89,6 @@ export default function Post() {
 
       <PostNav slug={post.slug} />
       <p className="visually-hidden">Atalho: Alt + seta para cima ou para baixo navega entre os posts.</p>
-    </article >
+    </article>
   )
-  S
+}

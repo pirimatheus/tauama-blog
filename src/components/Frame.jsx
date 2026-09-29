@@ -1,7 +1,17 @@
-
 // src/components/Frame.jsx
 // Moldura Y2K para imagens: <picture> com AVIF→WebP, lazy loading e
 // aspect-ratio fixo para não causar deslocamento de layout (CLS).
+/**
+ * @param {{
+ *   src: string,
+ *   avif?: string,
+ *   alt: string,
+ *   caption?: string,
+ *   label?: string,
+ *   ratio?: string,
+ *   priority?: boolean
+ * }} props
+ */
 export default function Frame({
   src, avif, alt, caption, label = 'imagem.jpg', ratio = '4 / 3', priority = false
 }) {

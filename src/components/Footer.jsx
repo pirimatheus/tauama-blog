@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import Mushroom from './Mushroom.jsx'
 
 const SOCIAL = [
-  { label: 'Instagram', href: '[instagram.com](https://instagram.com/tauama)' },
-  { label: 'Pinterest', href: '[pinterest.com](https://pinterest.com/tauama)' },
-  { label: 'Behance',   href: '[behance.net](https://behance.net/tauama)' },
+  { label: 'Instagram', href: 'https://instagram.com/tauama' },
+  { label: 'Pinterest', href: 'https://pinterest.com/tauama' },
+  { label: 'Behance',   href: 'https://behance.net/tauama' },
   { label: 'E-mail',    href: 'mailto:contato@tauama.com.br' }
 ]
 
