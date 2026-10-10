@@ -1,9 +1,9 @@
-
 // src/components/Header.tsx
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import Clock from './Clock'
 import Mushroom from './Mushroom.jsx'
+import { withBase } from '../utils/withBase'
 
 const LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -35,7 +35,7 @@ export default function Header() {
       <div className="header__inner">
         <Link className="brand" to="/">
           <span className="brand__frame">
-            <img src="/images/logo.webp" alt="Tauama" />
+            <img src={withBase('/images/logo.webp')} alt="Tauama" />
           </span>
         </Link>
 

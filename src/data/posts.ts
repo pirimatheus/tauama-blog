@@ -1,5 +1,6 @@
-
 // src/data/posts.ts
+import { withBase } from '../utils/withBase'
+
 export type Category = 'looks' | 'bastidores' | 'referencias' | 'moda-urbana'
 
 export const CATEGORIES: { id: Category; label: string }[] = [
@@ -36,7 +37,7 @@ export const posts: Post[] = [
     category: 'looks',
     date: '2026-09-08',
     readingTime: 6,
-    cover: { src: '/images/jaqueta-cogumelo.webp', avif: '/images/jaqueta-cogumelo.avif', alt: 'Jaqueta jeans customizada com bordado de cogumelo nas costas' },
+    cover: { src: withBase('/images/jaqueta-cogumelo.webp'), avif: withBase('/images/jaqueta-cogumelo.avif'), alt: 'Jaqueta jeans customizada com bordado de cogumelo nas costas' },
     body: [
       { type: 'p', text: 'Toda peça boa começa errada. Essa jaqueta chegou até mim com dois bolsos rasgados e uma cor de jeans que não existe mais — exatamente o tipo de problema que eu gosto de resolver.' },
       { type: 'h2', text: 'O molde antes da tinta' },
@@ -50,7 +51,7 @@ export const posts: Post[] = [
         'Fixação com ferro, pano úmido, 3 minutos.'
       ]},
       { type: 'quote', text: 'Customizar é editar. Você não acrescenta: você decide o que fica.', cite: 'anotação de caderno, 2024' },
-      { type: 'img', src: '/images/detalhe-bordado.webp', avif: '/images/detalhe-bordado.avif', alt: 'Close do bordado vermelho e branco no chapéu do cogumelo', caption: 'O ponto de realce leva três horas. Vale cada uma.' },
+      { type: 'img', src: withBase('/images/detalhe-bordado.webp'), avif: withBase('/images/detalhe-bordado.avif'), alt: 'Close do bordado vermelho e branco no chapéu do cogumelo', caption: 'O ponto de realce leva três horas. Vale cada uma.' },
       { type: 'p', text: 'O resultado é uma peça que não pede licença. Combina com alfaiataria larga, com bermuda de moletom, com o que vier.' }
     ]
   },
@@ -61,7 +62,7 @@ export const posts: Post[] = [
     category: 'referencias',
     date: '2026-08-26',
     readingTime: 5,
-    cover: { src: '/images/terror-metodo.webp', avif: '/images/terror-metodo.avif', alt: 'Colagem de fotogramas de filmes de terror em tons de magenta' },
+    cover: { src: withBase('/images/terror-metodo.webp'), avif: withBase('/images/terror-metodo.avif'), alt: 'Colagem de fotogramas de filmes de terror em tons de magenta' },
     body: [
       { type: 'p', text: 'Filme de terror bom não assusta o tempo todo. Ele organiza o silêncio para que um segundo específico funcione. Look é igual.' },
       { type: 'h2', text: 'A regra do único susto' },
@@ -77,7 +78,7 @@ export const posts: Post[] = [
     category: 'bastidores',
     date: '2026-08-11',
     readingTime: 4,
-    cover: { src: '/images/atelie.webp', avif: '/images/atelie.avif', alt: 'Bancada de atelier com tecidos, tesoura e caixas etiquetadas' },
+    cover: { src: withBase('/images/atelie.webp'), avif: withBase('/images/atelie.avif'), alt: 'Bancada de atelier com tecidos, tesoura e caixas etiquetadas' },
     body: [
       { type: 'p', text: 'Quatro metros quadrados, três caixas e uma arara. Todo o resto é método.' },
       { type: 'list', items: [
@@ -95,7 +96,7 @@ export const posts: Post[] = [
     category: 'moda-urbana',
     date: '2026-07-29',
     readingTime: 7,
-    cover: { src: '/images/liberdade.webp', avif: '/images/liberdade.avif', alt: 'Três pessoas com looks urbanos híbridos em calçada de centro da cidade' },
+    cover: { src: withBase('/images/liberdade.webp'), avif: withBase('/images/liberdade.avif'), alt: 'Três pessoas com looks urbanos híbridos em calçada de centro da cidade' },
     body: [
       { type: 'p', text: 'Existe uma diferença entre vestir liberdade e vestir o uniforme de quem fala sobre liberdade.' },
       { type: 'h2', text: 'Hibridismo é local' },
@@ -110,7 +111,7 @@ export const posts: Post[] = [
     category: 'looks',
     date: '2026-07-14',
     readingTime: 5,
-    cover: { src: '/images/metalico.webp', avif: '/images/metalico.avif', alt: 'Detalhe de tecido metálico prateado com reflexo magenta' },
+    cover: { src: withBase('/images/metalico.webp'), avif: withBase('/images/metalico.avif'), alt: 'Detalhe de tecido metálico prateado com reflexo magenta' },
     body: [
       { type: 'p', text: 'Brilho é um ingrediente forte. Usado sem medida, transforma qualquer produção em fantasia de festa temática.' },
       { type: 'list', items: [

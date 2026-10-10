@@ -1,8 +1,25 @@
-
+@font-face {
+  font-family: 'Blake';
+  src: url('/fonts/blake.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('/fonts/ComicNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('/fonts/ComicNeue-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
 /* src/styles/global.css */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
+  font-family: var(--f-comic);
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + var(--sp-4));
@@ -10,7 +27,7 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--f-ui);
+  font-family: var(--f-comic);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--c-ink);

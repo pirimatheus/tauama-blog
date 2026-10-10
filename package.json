@@ -2,11 +2,14 @@
   "name": "tauama-blog",
   "private": true,
   "type": "module",
+  "homepage": "https://pirimatheus.github.io/tauama-blog",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -17,6 +20,7 @@
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.7.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.9.3",
     "vite": "^5.4.21"
   }

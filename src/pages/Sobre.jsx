@@ -1,8 +1,8 @@
-
 // src/pages/Sobre.jsx
 import Window from '../components/Window.jsx'
 import Frame from '../components/Frame.jsx'
 import Button from '../components/Button.jsx'
+import { withBase } from '../utils/withBase'
 
 const TRAJETORIA = [
   ['2019', 'Primeiras customizações em peças de brechó, vendidas para amigas e conhecidos.'],
@@ -41,8 +41,8 @@ export default function Sobre() {
         </div>
 
         <Frame
-          src="/images/retrato.webp"
-          avif="/images/retrato.avif"
+          src={withBase('/images/retrato.webp')}
+          avif={withBase('/images/retrato.avif')}
           alt="Retrato da Tauama no atelier, com jaqueta customizada"
           label="retrato_2026.jpg"
           ratio="4 / 5"

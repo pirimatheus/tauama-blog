@@ -5,11 +5,11 @@
   --c-beet:        #581c87;   /* assinatura */
   --c-beet-deep:   #3ffff3;
   --c-beet-glow:   #7e22ce;
-  --c-beet-wash:   #ffe2f0;
+  --c-beet-wash:   #ffe2f9;
 
   /* acentos vibrantes — uso pontual, nunca em área grande */
-  --c-cyan:        #00e5ff;
-  --c-acid:        #020617;
+  --c-cyan:        #4C0075;
+  --c-acid:        #E6B8FF;
 
   /* ───────── cinzas XP ───────── */
   --c-face:        #dfdfdf;
@@ -39,7 +39,9 @@
   --hairline: 1px solid var(--c-ink);
 
   /* ───────── tipografia ───────── */
+  --f-comic: 'Comic Neue', 'Comic Sans MS', cursive;
   --f-display: 'Anton', 'Arial Narrow', 'Haettenschweiler', sans-serif;
+  --f-blake: 'Blake' , var(--f-display);
   --f-serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
   --f-ui:      Tahoma, Verdana, 'Segoe UI', system-ui, sans-serif;
 

@@ -1,4 +1,3 @@
-
 // src/pages/Home.jsx
 import { Link } from 'react-router-dom'
 import Button from '../components/Button.jsx'
@@ -8,6 +7,9 @@ import Marquee from '../components/Marquee.jsx'
 import PostCard from '../components/PostCard.jsx'
 import Mushroom from '../components/Mushroom.jsx'
 import { posts } from '../data/posts.ts'
+import FeaturedFrame from '../components/FeaturedFrame.jsx'
+import { withBase } from '../utils/withBase'
+
 
 export default function Home() {
   const destaques = posts.slice(0, 3)
@@ -30,14 +32,21 @@ export default function Home() {
           </div>
 
           <Frame
-            src="/images/hero-look.webp"
-            avif="/images/hero-look.avif"
+            src={withBase('/images/hero-look.webp')}
+            avif={withBase('/images/hero-look.avif')}
             alt="Look urbano com jaqueta customizada em tons de magenta e prata"
             label="look_01.jpg"
             ratio="3 / 4"
             priority
           />
         </div>
+      </section>
+       <Marquee items={[
+        'Liberdade', 'Customização', 'Streetwear BR', 'Alice',
+        'Terror', 'Retalho é matéria-prima', 'Magenta #9E0059'
+      ]} />
+      <section>
+        <FeaturedFrame />
       </section>
 
       <Marquee items={[

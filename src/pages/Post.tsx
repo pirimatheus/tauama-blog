@@ -5,6 +5,7 @@ import Frame from '../components/Frame.jsx'
 import PostNav from '../components/PostNav'
 import Button from '../components/Button.jsx'
 import { posts, CATEGORIES, formatDate, type Block } from '../data/posts'
+import { withBase } from '../utils/withBase'
 
 function renderBlock(block: Block, index: number) {
   switch (block.type) {
