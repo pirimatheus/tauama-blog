@@ -54,18 +54,6 @@ export default function Home() {
         'Terror', 'Retalho é matéria-prima', 'Magenta #9E0059'
       ]} />
 
-      <section id="destaques" className="container section">
-        <div className="section-head">
-          <h2>Últimos posts</h2>
-          <Link to="/blog">ver todos →</Link>
-        </div>
-        <div className="grid-cards">
-          {destaques.map((post, i) => (
-            <PostCard key={post.slug} post={post} priority={i === 0} />
-          ))}
-        </div>
-      </section>
-
       <section id="manifesto" className="container section">
         <div className="split">
           <Window title="sobre.txt — bloco de notas">

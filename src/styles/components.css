@@ -157,6 +157,19 @@
 .marquee:hover .marquee__track { animation-play-state: paused; }
 @keyframes slide { to { transform: translateX(-50%); } }
 
+@keyframes marquee-flicker {
+  0%, 100% { background: var(--c-night); color: var(--c-acid); }
+  20%      { background: var(--c-acid);  color: var(--c-night); }
+  40%      { background: var(--c-beet);  color: var(--c-paper); }
+  60%      { background: var(--c-paper); color: var(--c-beet); }
+  80%      { background: var(--c-cyan);  color: var(--c-acid); }
+}
+.marquee {
+  overflow: hidden;
+  border-block: var(--hairline);
+  box-shadow: var(--bevel-in);
+  animation: marquee-flicker .7s steps(1) infinite;
+}
 /* ══════════ 6. CARD DE POST ══════════ */
 .grid-cards { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; }
 @media (min-width: 640px)  { .grid-cards { grid-template-columns: repeat(2, 1fr); } }
@@ -288,10 +301,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  padding: var(--sp-1) var(--sp-2);
-  background: var(--c-face);
-  box-shadow: var(--bevel-out);
+  height: 48px;
+  cursor: pointer;
 }
 .brand__frame img {
   height: 100%;
@@ -311,7 +322,7 @@
 .featured__media {
   position: relative; overflow: hidden;
   box-shadow: var(--bevel-in); padding: 3px; background: var(--c-face-2);
-  animation: feat-in var(--t-slow) var(--ease);
+  animation: feat-in var(--t-slow) var (--ease);
 }
 .featured__media img {
   width: 100%; height: 100%; min-height: 280px;
@@ -354,5 +365,45 @@ r: var(--c-ink-soft); font-variant-numeric: tabular-nums;
   .featured__ctrl .btn { min-width: 64px };
 }
 
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-7);
+  margin-top: var(--sp-6);
+}
+@media (min-width: 900px) {
+  .blog-layout {
+    grid-template-columns: 2.2fr 1fr;
+    align-items: start;
+  }
+}
 
+.blog-feature h2 {
+  font: 400 clamp(2rem, 4vw, 3.4rem)/1.05 var(--f-display);
+  text-transform: uppercase;
+  margin: 0 0 var(--sp-5);
+}
+.blog-feature p {
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--sp-5);
+}
+
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.blog-sidebar .chips {
+  margin: 0;
+}
+
+.grid-cards--sidebar {
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+}
+.grid-cards--sidebar .post-card {
+  font-size: 0.85em;
+}
 
