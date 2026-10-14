@@ -1,51 +1,32 @@
 // src/pages/Post.tsx
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import Frame from '../components/Frame.jsx'
 import PostNav from '../components/PostNav'
 import Button from '../components/Button.jsx'
-import { posts, CATEGORIES, formatDate, type Block } from '../data/posts'
-import { withBase } from '../utils/withBase'
-
-function renderBlock(block: Block, index: number) {
-  switch (block.type) {
-    case 'h2':
-      return <h2 key={index}>{block.text}</h2>
-    case 'quote':
-      return (
-        <blockquote key={index}>
-          {block.text}
-          {block.cite && <cite>{block.cite}</cite>}
-        </blockquote>
-      )
-    case 'list':
-      return <ul key={index}>{block.items.map((li, i) => <li key={i}>{li}</li>)}</ul>
-    case 'img':
-      return (
-        <Frame
-          key={index}
-          src={block.src}
-          avif={block.avif}
-          alt={block.alt}
-          caption={block.caption}
-          label="detalhe.jpg"
-          ratio="16 / 10"
-        />
-      )
-    default:
-      return <p key={index}>{block.text}</p>
-  }
-}
+import { CATEGORIES, formatDate } from '../data/posts'
+import { getPostBySlug } from '../data/postsClient'
 
 export default function Post() {
   const { slug } = useParams<{ slug: string }>()
-  const post = posts.find(p => p.slug === slug)
+  const [post, setPost] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (!slug) return
+    setLoading(true)
+    getPostBySlug(slug)
+      .then(setPost)
+      .finally(() => setLoading(false))
+  }, [slug])
 
   useEffect(() => {
     if (post) document.title = `${post.title} — TAUAMA`
     return () => { document.title = 'TAUAMA — design de moda, liberdade e customização' }
   }, [post])
 
+  if (loading) return null
   if (!post) return <Navigate to="/blog" replace />
 
   const category = CATEGORIES.find(c => c.id === post.category)
@@ -66,16 +47,15 @@ export default function Post() {
       </header>
 
       <Frame
-        src={post.cover.src}
-        avif={post.cover.avif}
-        alt={post.cover.alt}
+        src={post.cover}
+        alt={post.coverAlt}
         label={`${post.slug}.jpg`}
         ratio="16 / 9"
         priority
       />
 
       <div className="prose reading" style={{ marginTop: 'var(--sp-6)' }}>
-        {post.body.map(renderBlock)}
+        <TinaMarkdown content={post.body} />
       </div>
 
       <div className="reading" style={{ marginTop: 'var(--sp-6)' }}>

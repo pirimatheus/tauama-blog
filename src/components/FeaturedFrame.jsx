@@ -1,13 +1,19 @@
 // src/components/FeaturedFrame.jsx
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Window from './Window.jsx'
 import Button from './Button.jsx'
-import { posts, CATEGORIES, formatDate } from '../data/posts.ts'
-
-const destaques = posts.slice(0, 5)
+import { CATEGORIES, formatDate } from '../data/posts.ts'
+import { getAllPosts } from '../data/postsClient'
 
 export default function FeaturedFrame() {
+  const [destaques, setDestaques] = useState([])
   const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    getAllPosts().then(all => setDestaques(all.slice(0, 5)))
+  }, [])
+
+  if (destaques.length === 0) return null
   const post = destaques[index]
   const label = CATEGORIES.find(c => c.id === post.category)?.label ?? post.category
 
@@ -18,10 +24,7 @@ export default function FeaturedFrame() {
     <Window title="destaques.exe" className="featured">
       <div className="featured__grid">
         <div className="featured__media scan" key={post.slug}>
-          <picture>
-            {post.cover.avif && <source srcSet={post.cover.avif} type="image/avif" />}
-            <img src={post.cover.src} alt={post.cover.alt} decoding="async" />
-          </picture>
+          <img src={post.cover} alt={post.coverAlt} decoding="async" />
         </div>
 
         <div className="featured__info" key={`info-${post.slug}`}>

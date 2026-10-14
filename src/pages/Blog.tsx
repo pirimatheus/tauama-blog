@@ -1,16 +1,22 @@
 // src/pages/Blog.tsx
-import { useMemo } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import PostCard from '../components/PostCard.jsx'
-import { posts, CATEGORIES, type Category } from '../data/posts'
+import { CATEGORIES, type Category } from '../data/posts'
+import { getAllPosts } from '../data/postsClient'
 
 export default function Blog() {
   const [params, setParams] = useSearchParams()
   const active = params.get('cat') as Category | null
+  const [posts, setPosts] = useState<any[]>([])
+
+  useEffect(() => {
+    getAllPosts().then(setPosts)
+  }, [])
 
   const listed = useMemo(
     () => (active ? posts.filter(p => p.category === active) : posts),
-    [active]
+    [active, posts]
   )
 
   const setCategory = (cat: Category | null) => {

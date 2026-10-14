@@ -1,4 +1,5 @@
 // src/pages/Home.jsx
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button.jsx'
 import Window from '../components/Window.jsx'
@@ -6,12 +7,17 @@ import Frame from '../components/Frame.jsx'
 import Marquee from '../components/Marquee.jsx'
 import PostCard from '../components/PostCard.jsx'
 import Mushroom from '../components/Mushroom.jsx'
-import { posts } from '../data/posts.ts'
+import { getAllPosts } from '../data/postsClient'
 import FeaturedFrame from '../components/FeaturedFrame.jsx'
 import { withBase } from '../utils/withBase'
 
-
 export default function Home() {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    getAllPosts().then(setPosts)
+  }, [])
+
   const destaques = posts.slice(0, 3)
 
   return (

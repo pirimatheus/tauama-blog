@@ -88,7 +88,7 @@
 .header__clock i {
   width: 7px; height: 7px; background: var(--c-cyan);
   border: 1px solid var(--c-shadow); animation: blink 2s steps(1) infinite;
-}
+} 
 @keyframes blink { 50% { background: var(--c-beet); } }
 
 .burger { display: none; margin-left: auto; width: var(--touch); height: 38px; padding: 0; }
@@ -225,7 +225,11 @@
 .chip[aria-pressed="true"] { box-shadow: var(--bevel-in); background: var(--c-beet); color: #fff; }
 
 /* ══════════ 9. NAVEGAÇÃO ↑ ↓ ENTRE POSTS ══════════ */
-.pnav { display: grid; gap: var(--sp-3); margin-top: var(--sp-7); }
+.pnav { 
+  display: grid;
+  gap: var(--sp-3);
+  margin-top: var(--sp-7);
+}
 @media (min-width: 720px) { .pnav { grid-template-columns: 1fr 1fr; } }
 
 .pnav__btn {

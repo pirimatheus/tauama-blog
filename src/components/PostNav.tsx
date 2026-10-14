@@ -1,18 +1,21 @@
-
 // src/components/PostNav.tsx
-// Fluxo vertical tipo Reels, mas por botão: ▲ post anterior, ▼ próximo post.
-// Atalho de teclado: Alt + Seta ↑ / ↓ (não conflita com o scroll nativo).
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { posts, getPostIndex, type Post } from '../data/posts'
+import { getAllPosts } from '../data/postsClient'
 
 interface Props { slug: string }
 
 export default function PostNav({ slug }: Props) {
   const navigate = useNavigate()
-  const index = getPostIndex(slug)
-  const previous: Post | undefined = index > 0 ? posts[index - 1] : undefined
-  const next: Post | undefined = index < posts.length - 1 ? posts[index + 1] : undefined
+  const [posts, setPosts] = useState<any[]>([])
+
+  useEffect(() => {
+    getAllPosts().then(setPosts)
+  }, [])
+
+  const index = posts.findIndex(p => p.slug === slug)
+  const previous = index > 0 ? posts[index - 1] : undefined
+  const next = index > -1 && index < posts.length - 1 ? posts[index + 1] : undefined
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {

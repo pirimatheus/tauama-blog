@@ -1,4 +1,3 @@
-
 // src/components/PostCard.jsx
 import { Link } from 'react-router-dom'
 import { CATEGORIES, formatDate } from '../data/posts.ts'
@@ -10,15 +9,12 @@ export default function PostCard({ post, priority = false }) {
     <Link className="card" to={`/blog/${post.slug}`}>
       <div className="card__thumb scan">
         <span className="tag">{label}</span>
-        <picture>
-          {post.cover.avif && <source srcSet={post.cover.avif} type="image/avif" />}
-          <img
-            src={post.cover.src}
-            alt={post.cover.alt}
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-          />
-        </picture>
+        <img
+          src={post.cover}
+          alt={post.coverAlt}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+        />
       </div>
       <div className="card__body">
         <h3 className="card__title">{post.title}</h3>
