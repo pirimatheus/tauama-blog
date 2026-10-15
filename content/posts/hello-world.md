@@ -1,5 +1,11 @@
 ---
-title: Hello, World!
+title: 'Hello, World!'
+slug: 'Hello, Word!'
+excerpt: resumo do hello world
+category: looks
+readingTime: 1
+cover: /images/hero-look.avif
+coverAlt: hello world
 ---
 
 ## Hello World!
