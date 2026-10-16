@@ -22,11 +22,10 @@ jobs:
       - run: npm ci
 
       - run: npx tinacms build
+      - run: npx tinacms build
         env:
-          TINA_PUBLIC_CLIENT_ID: ${{ 5cc5dda4-705c-415d-a038-cb4345391fb9
- }}
-          TINA_TOKEN: ${{ 4b216ec3ed4f1c1eb6c45c1d84719463879dfe81 }}
-
+          TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
       - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
