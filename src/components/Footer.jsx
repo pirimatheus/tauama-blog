@@ -17,7 +17,7 @@ export default function Footer() {
         <div>
           <p className="footer__brand">Tau<span>ama</span></p>
           <p style={{ maxWidth: '32ch', fontSize: 'var(--fs-sm)' }}>
-            Design de moda, customização e liberdade de expressão. Feito em São Paulo,
+            Design de moda, customização e liberdade de expressão. Feito em Pirenópolis,
             com um cogumelo de sorte no bolso. <Mushroom size={14} color="#ff4fa3" style={{ display: 'inline' }} />
           </p>
         </div>
