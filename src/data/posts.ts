@@ -127,4 +127,4 @@ export const posts: Post[] = [
 export const getPostIndex = (slug: string) => posts.findIndex(p => p.slug === slug)
 
 export const formatDate = (iso: string) =>
-  new Date(`${iso}T12:00:00`).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+  new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
